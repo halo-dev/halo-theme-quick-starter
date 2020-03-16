@@ -1,19 +1,46 @@
 <#include "module/macro.ftl">
-<@layout title="${options.blog_title!} | 归档" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="归档 - ${blog_title!}">
     <h1>归档</h1>
     <ul>
-        <#--
-            详情请参考：https://halo.run/develop/theme.html#%E6%A0%B9%E6%8D%AE%E5%B9%B4%E4%BB%BD%E5%BD%92%E6%A1%A3
-         -->
-        <@postTag method="archiveYear">
-            <#list archives as archive>
+        <#list archives as archive>
+            <h2>${archive.year?c}</h2>
+            <#list archive.posts as post>
                 <li>
-                <h2>${archive.year?c}</h2>
-                <#list archive.posts?sort_by("createTime")?reverse as post>
-                    <a href="${context!}/archives/${post.url!}">${post.title!}</a>
-                </#list>
+                    <a href="${post.fullPath!}">${post.title!}</a>
                 </li>
             </#list>
-        </@postTag>
+        </#list>
     </ul>
+
+    <h1>分页</h1>
+
+    <#if posts.totalPages gt 1>
+        <ul>
+            <@paginationTag method="archives" page="${posts.number}" total="${posts.totalPages}" display="3">
+                <#if pagination.hasPrev>
+                    <li>
+                        <a href="${pagination.prevPageFullPath!}">
+                            上一页
+                        </a>
+                    </li>
+                </#if>
+                <#list pagination.rainbowPages as number>
+                    <li>
+                        <#if number.isCurrent>
+                            <span class="current">第 ${number.page!} 页</span>
+                        <#else>
+                            <a href="${number.fullPath!}">第 ${number.page!} 页</a>
+                        </#if>
+                    </li>
+                </#list>
+                <#if pagination.hasNext>
+                    <li>
+                        <a href="${pagination.nextPageFullPath!}">
+                            下一页
+                        </a>
+                    </li>
+                </#if>
+            </@paginationTag>
+        </ul>
+    </#if>
 </@layout>

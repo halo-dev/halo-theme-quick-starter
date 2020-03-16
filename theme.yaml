@@ -6,18 +6,20 @@
 #description: 主题描述
 #logo: 主题 Logo
 #website: 主题网址
-#website: 主题的 Github 仓库
+#repo: 主题的 Github 仓库
 #version: 版本号
+#require: 1.3.0 最低支持的 Halo 版本
 
-# 详情请参考：https://halo.run/develop/theme.html#theme-yaml
+# 详情请参考：https://halo.run/archives/develop-theme-config#themeyaml
 
-id: ruibaby_quickstarter
+id: halo_quickstarter
 name: QuickStarter
 author:
-  name: Ryan Wang
-  website: https://ryanc.cc
+  name: halo-dev
+  website: https://halo.run
 description: Quick starter theme for halo
 logo:
 website: https://github.com/halo-dev/halo-theme-quick-starter
 repo: https://github.com/halo-dev/halo-theme-quick-starter
-version: 1.0
+version: 1.0.0
+require: 1.3.0
