@@ -1,25 +1,12 @@
-#id: 主题的唯一标识
-#name: 主题名称
-#author:
-#  name: 作者名称
-#  website: 作者网站
-#description: 主题描述
-#logo: 主题 Logo
-#website: 主题网址
-#repo: 主题的 Github 仓库
-#version: 版本号
-#require: 1.3.0 最低支持的 Halo 版本
-
-# 详情请参考：https://halo.run/archives/develop-theme-config#themeyaml
-
+# 配置详情请参考：https://docs.halo.run/zh/developer-guide/theme/config-files
 id: halo_quickstarter
 name: QuickStarter
 author:
   name: halo-dev
   website: https://halo.run
 description: Quick starter theme for halo
-logo:
+logo: https://avatars.githubusercontent.com/u/48195280?s=200&v=4
 website: https://github.com/halo-dev/halo-theme-quick-starter
 repo: https://github.com/halo-dev/halo-theme-quick-starter
 version: 1.0.0
-require: 1.3.0
+require: 1.4.2

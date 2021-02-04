@@ -1,5 +1,4 @@
-# configurations
-# 详情请参考：https://halo.run/develop/theme.html#settings-yaml
+# 配置详情请参考：https://docs.halo.run/zh/developer-guide/theme/config-files
 genernal:
   label: 基本设置
   items:
